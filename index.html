@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <style>
-      h1, .topic-buttons {
+      h1, h2, .topic-buttons, .resources {
         text-align: center;
       }
       table, .key {
@@ -46,16 +46,16 @@
       <h1>Comparison of Textbooks vs. Our Approach</h1>
 
         <hr>
-<div class='key'>
-      <h2>Key</h2>
-        <ul>
-          <li>Yellow: Wheelock (# = Chapter Number, 40 chps. total)</li>
-          <li>Green: Shelmerdine (# = Chapter Number, 36 chps. total)</li>
-          <li>Blue: Us (# = Class Meeting of Academic Year, ~40 meetings per semester)</li>
-        </ul>
-</div>
-          <hr>
-
+    <div class='key'>
+          <h2>Key</h2>
+            <ul>
+              <li>Yellow: Wheelock (# = Chapter Number, 40 chps. total)</li>
+              <li>Green: Shelmerdine (# = Chapter Number, 36 chps. total)</li>
+              <li>Blue: Us (# = Class Meeting of Academic Year, ~40 meetings per semester)</li>
+            </ul>
+    </div>
+              <hr>
+<div class="visualization">
     <!-- Academic Year Calendar -->
       <table>
         <tr>
@@ -182,7 +182,7 @@
 
         <hr>
 
-
+</div>
       <div class="topic-buttons">
         <h2>Topic</h2>
 
@@ -190,6 +190,18 @@
         <button onclick="toggleTopicColor('subj')" class="btn btn-secondary">Subjunctive (Forms)</button>
         <button onclick="toggleTopicColor('ind-st')" class="btn btn-success">Indirect Statement</button>
         <button onclick="toggleTopicColor('reading')" class="btn btn-warning">Reading Hyginus</button>
+      </div>
+
+      <hr>
+
+      <div class="resources">
+        <h2>Resources</h2>
+<a href="https://libatique.info/LATN101-F19/"><button type="button" name="button" class="btn btn-info">Course Website - LATN 101 - Fall 2019</button></a>
+<a href="https://libatique.info/LATN102-S20/"><button type="button" name="button" class="btn btn-dark">Course Website - LATN 102 - Spring 2020</button></a>
+<br>
+<a href="#"><button type="button" name="button" class="btn btn-primary">Sample Targeted Assignment - </button></a>
+
+
       </div>
 
     </div>
