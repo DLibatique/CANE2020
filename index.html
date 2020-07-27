@@ -25,15 +25,12 @@
       }
       td.wheelock {
         width: 2.5%;
-        background-color: #f2f05a;
       }
       td.shelmerdine {
         width: 3.125%;
-        background-color: #36ff54;
       }
       td.us {
         width: 5%;
-        background-color: #34eaf7;
       }
       .sem-end {
         border-right: 3px solid black;
@@ -110,7 +107,7 @@
             <td class="wheelock">15</td>
             <td class="wheelock third-decl">16</td>
             <td class="wheelock">17</td>
-            <td class="wheelock">18</td>
+            <td class="wheelock passive">18</td>
             <td class="wheelock">19</td>
             <td class="wheelock sem-end">20</td>
             <td class="wheelock">21</td>
@@ -152,7 +149,7 @@
             <td class="shelmerdine">11</td>
             <td class="shelmerdine">12</td>
             <td class="shelmerdine">13</td>
-            <td class="shelmerdine">14</td>
+            <td class="shelmerdine passive">14</td>
             <td class="shelmerdine">15</td>
             <td class="shelmerdine sem-end">16</td>
             <td class="shelmerdine">17</td>
@@ -178,7 +175,7 @@
         <table>
           <tr>
             <td class="us third-decl">1</td>
-            <td class="us">5</td>
+            <td class="us passive">5</td>
             <td class="us">9</td>
             <td class="us">13</td>
             <td class="us">17</td>
@@ -213,6 +210,7 @@
           <br>
         <button onclick="toggleTopicColor('ind-st')" class="btn btn-success">Indirect Statement</button>
         <button onclick="toggleTopicColor('reading')" class="btn btn-warning">Reading Hyginus</button>
+        <button onclick="toggleTopicColor('passive')" class="btn btn-warning">Passive Voice</button>
 
       </div>
 
@@ -293,16 +291,17 @@
       function toggleTopicColor(x) {
 
         var origColorPairs = {
-          'wheelock': 'rgb(242, 240, 90)',
-          'shelmerdine': 'rgb(54, 255, 84)',
-          'us': 'rgb(52, 234, 247)'
+          'wheelock': 'rgb(255, 255, 255)',
+          'shelmerdine': 'rgb(255, 255, 255)',
+          'us': 'rgb(255, 255, 255)'
         }
 
         var newColorPairs = {
-          'third-decl': 'rgb(245, 66, 155)',
-          'subj': 'rgb(250, 150, 27)',
-          'ind-st': 'rgb(182, 66, 245)',
-          'reading': 'rgb(255, 55, 0)'
+          'third-decl': 'rgb(0, 0, 0)',
+          'subj': 'rgb(0, 0, 0)',
+          'ind-st': 'rgb(0, 0, 0)',
+          'reading': 'rgb(0, 0, 0)',
+          'passive': 'rgb(0,0,0)'
         }
 
         const elements = document.getElementsByClassName(x);
@@ -313,20 +312,26 @@
           var color = newColorPairs['subj'];
         } else if (x === 'ind-st') {
           var color = newColorPairs['ind-st'];
-        } else {
+        } else if (x === 'reading') {
           var color = newColorPairs['reading'];
+        } else {
+          var color = newColorPairs['passive'];
         }
 
         for (var i = 0; i < elements.length; i++) {
           if (elements[i].style.backgroundColor !== color) {
             elements[i].style.backgroundColor = color;
+            elements[i].style.color = 'rgb(255,255,255)';
           } else {
             if (elements[i].classList[0] === 'wheelock') {
               elements[i].style.backgroundColor = origColorPairs['wheelock'];
+              elements[i].style.color = 'rgb(0,0,0)';
             } else if (elements[i].classList[0] === 'shelmerdine') {
               elements[i].style.backgroundColor = origColorPairs['shelmerdine'];
+              elements[i].style.color = 'rgb(0,0,0)';
             } else {
               elements[i].style.backgroundColor = origColorPairs['us'];
+              elements[i].style.color = 'rgb(0,0,0)';
             }
           }
         }
